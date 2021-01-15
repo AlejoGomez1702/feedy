@@ -1,0 +1,82 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>{{isLoged? 'Login' : 'Signup'}}</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content padding>
+
+  <div class="mt-title text-center">
+    <h1 class="text-sign-up">Sign up</h1>
+  </div>
+
+  <form #fm="ngForm" (ngSubmit)="onSubmit(fm)">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-md="6" offset-md="3">
+          <ion-list lines="none">
+            <!-- Firs name -->
+            <ion-item>
+              <input type="text" class="form-control inp-size" placeholder="First name" ngModel name="first_name" required #Ctrl="ngModel">
+            </ion-item>
+
+            <!-- Last name -->
+            <ion-item class="mt-2">
+              <input type="text" class="form-control inp-size" placeholder="Last name" ngModel name="last_name" required #Ctrl="ngModel">
+            </ion-item>
+            
+            <!-- Email -->
+            <ion-item class="mt-2">
+              <input type="email" class="form-control inp-size" placeholder="Email Address" ngModel name="email" required email #Ctrl="ngModel">
+            </ion-item>
+
+            <!-- Contact number -->
+            <ion-item class="mt-2">
+              <input type="number" class="form-control inp-size" placeholder="Contact number" ngModel name="contact_number" required #Ctrl="ngModel">
+            </ion-item>
+
+            <!-- Password -->
+            <ion-item class="mt-2">
+              <!-- <input type="password" class="form-control inp-size" placeholder="Password" ngModel name="password" required #Ctrl="ngModel"> -->
+
+              <div class="input-group">
+                <input [type]="isShowPassword ? 'text' : 'password'" class="form-control inp-size border-right-0" placeholder="Password" ngModel name="password" required #Ctrl="ngModel">
+                <span class="input-group-append bg-white" (click)="showPassword()">
+                    <button class="btn border border-left-0 inp-size" type="button"><ion-icon [name]="passwordToggleIcon"></ion-icon></button>
+                </span>
+              </div> 
+            </ion-item>
+
+            <!-- Password -->
+            <ion-item class="mt-2">
+              <!-- <input type="password" class="form-control inp-size" placeholder="Confirm password" ngModel name="confirm_password" required #Ctrl="ngModel"> -->
+              
+              <div class="input-group">
+                <input [type]="isShowPassword2 ? 'text' : 'password'" class="form-control inp-size border-right-0" placeholder="Confirm password" ngModel name="confirm_password" required #Ctrl="ngModel">
+                <span class="input-group-append bg-white" (click)="showPassword2()">
+                    <button class="btn border border-left-0 inp-size" type="button"><ion-icon [name]="passwordToggleIcon2"></ion-icon></button>
+                </span>
+              </div> 
+            
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <!-- <ion-row> -->
+                
+      <ion-button type="submit" color="red" expand="block" class="pad-btn">
+        Sign Up
+      </ion-button>
+
+      <div class="mt-4 ion-text-center">
+        <ion-text>
+          Already have an account?
+          <ion-label (click)="signIn()" color="red">Sign In</ion-label>
+        </ion-text>
+      </div>
+
+    </ion-grid>
+  </form>
+  <ion-spinner color="primary" *ngIf="isLoading"></ion-spinner>
+
+</ion-content>

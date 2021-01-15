@@ -1,0 +1,40 @@
+.text-sign-in
+{
+    font-weight: 700;
+}
+
+.mt-title
+{
+    margin-top: 15%;
+}
+
+.pad-btn
+{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+input::placeholder
+{
+    font-size: smaller;
+}
+
+ion-button 
+{
+    text-transform: none;
+}
+
+.border-right-0
+{
+    border-right: none !important;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.border-left-0
+{
+    border-color: gray;
+    border-left: none !important;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
