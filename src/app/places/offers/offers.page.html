@@ -1,18 +1,173 @@
-<ion-header >
-  <ion-toolbar >
-    <ion-buttons slot="start">
+<ion-header color="red">
+  <ion-toolbar color="red">
+    <ion-buttons slot="end">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-buttons slot="primary">
-      <ion-button routerLink="/places/tabs/offers/new">
-        <ion-icon name="add" slot="icon-only"></ion-icon>
-      </ion-button>
+    <ion-buttons slot="start">
+      <img class="title-image" src="assets/icon/feedy-icon.svg" width="80" height="35" />
     </ion-buttons>
-    <ion-title>offers</ion-title>
+    <ion-title size="small" class="ion-text-center">Nearby</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="ion-padding">
+  <!-- <ion-segment padding="0px 20px" (ionChange)="onFilter($event)">
+    <ion-segment-button value="all" checked>Seeker</ion-segment-button>
+    <ion-segment-button value="bookable" routerLink="/places/tabs/offers/new">Donar</ion-segment-button>
+  </ion-segment> -->
+
+  <!-- Spinner -->
+  <ion-grid *ngIf="isLoading">
+    <ion-row id="spin">
+      <ion-col size="12" size-sm="8" offset-sm="2">
+        <ion-spinner color="primary"></ion-spinner>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="white">
+      <ion-icon name="add-outline" class="color-fab"></ion-icon>
+    </ion-fab-button>
+  </ion-fab> -->
+
+  <!-- Text and background image -->
+  <ion-grid class="mt-text">
+    <ion-row>
+      <ion-col size="9">
+        <ion-text >
+          <h4 class="pl-text fw-700">3 items near you</h4>
+          <p class="pl-text txt-description">
+            Picking them up could reduce 40% 
+            <br>
+            food wastage from our country
+          </p>
+        </ion-text>
+      </ion-col>
+      <ion-col>
+        <img class="icon main-icon" src="assets/icon/discover.svg" width="900" height="100" />
+      </ion-col>
+    </ion-row>    
+  </ion-grid>
+
+  <ion-list>
+    <ion-card *ngFor="let i of discover">
+      <ion-card-header>            
+          <img src="assets/images/background.svg" class="main-img">
+          <div class="header-heart">
+            <ion-icon [name]="!heartIcon ? 'heart-outline' : 'heart-circle-outline'" size="large" (click)="changeHeartIcon()"></ion-icon>
+          </div>
+  
+          <div class="best-before">
+            <ion-badge color="red" class="txt-best-before">Best Before: 28 Jan 2021</ion-badge>
+          </div>
+  
+          <div class="title">
+            <h5>2 Kg Apples</h5>
+          </div>
+  
+          <div class="subtitle">
+            <p>Leftover fresh applles available to share!</p>
+          </div>
+  
+        <!-- <ion-badge color="primary">11</ion-badge> -->
+      </ion-card-header>
+  
+      <ion-card-content>      
+        <ion-list lines="none">
+  
+          <!-- Avatar an user info -->
+          <ion-item class="ml-avatar">
+            <ion-avatar slot="start">
+              <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+            </ion-avatar>
+            <ion-label>
+              <h3 class="bold-avatar-name">Leslie Alexander</h3>
+              <p>20 Minutes ago</p>
+            </ion-label>
+          </ion-item>
+  
+          <ion-item>   
+            <ion-icon name="location-outline" class="color-location"></ion-icon>       
+            <p class="font-siz-address">Xyz street, Xyz city</p>       
+            <ion-button color="red" size="small" slot="end">
+              <ion-label class="font-siz-btn">Open Map</ion-label>
+              <ion-icon name="navigate" slot="end"></ion-icon>
+            </ion-button>
+          </ion-item>
+        </ion-list>
+  
+        <ion-footer>
+          <ion-grid class="grid-top">
+            <ion-row>
+              <ion-col size="6">
+                <ion-tab-button layout="icon-start">
+                  <ion-label>Message</ion-label>
+                  <ion-icon src="assets/ion-icons/mail.svg" class="color-location"></ion-icon>
+                </ion-tab-button>
+              </ion-col>
+              <ion-col size="1">
+                <div class="verticalLine"></div>
+              </ion-col>
+              <ion-col size="5">
+                <ion-tab-button layout="icon-start">
+                  <ion-label>Call</ion-label>
+                  <ion-icon src="assets/ion-icons/call.svg" class="color-location"></ion-icon>
+                </ion-tab-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-footer>
+      </ion-card-content>          
+    </ion-card>
+  
+  </ion-list>
+
+
+
+
+  <!-- <ion-grid *ngIf="!isLoading">
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2" text-center>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>{{loadedPlaces[0]?.title}}</ion-card-title>
+            <ion-card-subtitle>{{loadedPlaces[0]?.price}}</ion-card-subtitle>
+          </ion-card-header>
+          <ion-img [src]="loadedPlaces[0]?.imageUrl"></ion-img>
+          <ion-card-content>
+            <p>{{loadedPlaces[0]?.description}}</p>
+          </ion-card-content>
+          <div text-right padding>
+            <ion-button fill="clear" color="primary" [routerLink]="['/',
+            'places', 'tabs',
+            'discover',
+             loadedPlaces[0]?.id]">More..
+            </ion-button>
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2" text-center>
+        <ion-list>
+          <ion-item *ngFor="let place of loadedPlaces.slice(1)"
+            [routerLink]="['/','places','tabs','discover', place.id]">
+            <ion-thumbnail slot="start">
+              <ion-img [src]="place.imageUrl"></ion-img>
+            </ion-thumbnail>
+            <ion-label>
+              <h2>{{place.title}}</h2>
+              <p>{{place.description}}</p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+</ion-content>
+
+<!-- <ion-content padding>
   <ion-grid>
   <ion-row>
     <ion-col size="12" size-sm="8" offset-sm="2" text-center>
@@ -51,4 +206,4 @@
     </ion-col>
   </ion-row>
 </ion-grid>
-</ion-content>
+</ion-content> -->

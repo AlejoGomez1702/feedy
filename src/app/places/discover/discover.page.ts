@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { Item } from '../place.model';
 import { PlacesService } from '../places.service';
 import { SegmentChangeEventDetail } from '@ionic/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-discover',
@@ -23,7 +24,10 @@ export class DiscoverPage implements OnInit, OnDestroy
   // Heart icon change True->Favorite, False->NO Favorite.
   public heartIcon: boolean = false;
 
-  constructor(private placesService: PlacesService) { }
+  constructor(
+    private placesService: PlacesService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.itemSub = this.placesService.items.subscribe(places => {
@@ -41,6 +45,11 @@ export class DiscoverPage implements OnInit, OnDestroy
 
   onFilter(event: CustomEvent<SegmentChangeEventDetail>) {
     console.log(event.detail);
+  }
+
+  goToNewItem()
+  {
+    this.router.navigate(['/places/tabs/discover/new-item']);
   }
   
   ngOnDestroy() {

@@ -26,7 +26,7 @@
   </ion-grid>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button color="white">
+    <ion-fab-button color="white" (click)="goToNewItem()">
       <ion-icon name="add-outline" class="color-fab"></ion-icon>
     </ion-fab-button>
   </ion-fab>
@@ -103,7 +103,7 @@
               <ion-col size="6">
                 <ion-tab-button layout="icon-start">
                   <ion-label>Message</ion-label>
-                  <ion-icon name="mail-outline" class="color-location"></ion-icon>
+                  <ion-icon src="assets/ion-icons/mail.svg" class="color-location"></ion-icon>
                 </ion-tab-button>
               </ion-col>
               <ion-col size="1">
@@ -112,7 +112,7 @@
               <ion-col size="5">
                 <ion-tab-button layout="icon-start">
                   <ion-label>Call</ion-label>
-                  <ion-icon name="call-outline" class="color-location"></ion-icon>
+                  <ion-icon src="assets/ion-icons/call.svg" class="color-location"></ion-icon>
                 </ion-tab-button>
               </ion-col>
             </ion-row>

@@ -17,14 +17,35 @@ export class OffersPage implements OnInit, OnDestroy {
   offeredPlaces: Item[];
   private placesSub: Subscription;
   isLoading = false;
+  public ubication: boolean = false;
 
-  constructor(private placeServices: PlacesService, private router:Router ) { }
+  // For example loop
+  public discover = ['','','','',''];
 
-  ngOnInit() {
+  constructor(
+    private placeServices: PlacesService, 
+    private router:Router
+  ) { }
+
+  ngOnInit() 
+  {
+    this.verifyUbication();
+
+
    this.placesSub= this.placeServices.items.subscribe(places =>{
     this.offeredPlaces=places;
    });
   }
+
+  verifyUbication()
+  {
+    if(!this.ubication)
+    {
+      this.router.navigate(['/places/tabs/offers/ubication']);
+    }
+  } 
+
+
   ionViewWillEnter(){
     this.isLoading= true;
     this.placeServices.getData().subscribe(()=>{
@@ -42,5 +63,7 @@ export class OffersPage implements OnInit, OnDestroy {
       this.placesSub.unsubscribe();
     }
   }
+
+
 
 }
