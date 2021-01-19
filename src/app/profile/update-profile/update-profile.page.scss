@@ -1,0 +1,65 @@
+.header_container{
+    display: flex;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.back_custom{
+    width: 14px;
+    height: 14px;
+}
+
+ion-title{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: #090909;
+    margin-top: -5px;
+}
+.container_logo{
+    width:  70px;
+    height: 70px;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: auto;
+    &_user{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.special_button{
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 14px;
+    padding-right: 14px;
+    border-radius: 4px;
+
+    background-color: #FC153B;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 0.9px;
+}
+
+.save_profile{
+    padding-top: 10px;
+    padding-left: 25px;
+
+    background-color: transparent;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    color: #FC153B;
+    text-decoration: none;
+    letter-spacing: 0.9px;
+}

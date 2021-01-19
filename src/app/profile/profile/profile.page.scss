@@ -1,0 +1,101 @@
+.container_logo{
+    width:  85px;
+    height: 85px;
+    margin-top: 55px;
+    margin-left: auto;
+    margin-right: auto;
+    &_user{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.container_info{
+    width: 100%;
+    text-align: center;
+}
+
+.container_info h3{
+    font-family: 'Poppins';
+    text-align: center;
+    font-weight: 700;
+    font-size: 17px;
+    margin-top: 15px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.special_button{
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 14px;
+    padding-right: 14px;
+
+    border-radius: 4px;
+
+    background-color: #FC153B;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 0.9px;
+}
+ion-title{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: #090909;
+    margin-top: -5px;
+}
+
+.custom-back{
+    width: 14px;
+    height: 14px;
+}
+
+.header_container{
+    display: flex;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.back_custom{
+    width: 14px;
+    height: 14px;
+    margin-top: 30px;
+}
+
+.container_contact{
+    padding-top: 50px;
+    padding-left: 20px;
+}
+
+.contact_icon{
+    width: 20px;
+    height: 19px;
+}
+
+.container_contact h2{
+    margin-bottom: 10px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 22px;
+    color: #999999;
+}
+
+.contact_title{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.9px
+}

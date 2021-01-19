@@ -15,9 +15,14 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import {environment} from '../environments/environment';
 import { AuthService } from './auth/auth.service';
+import { ProfileComponent } from './components/profile/profile.component';
+  import { from } from 'rxjs';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    ProfileComponent
+  ],
   entryComponents: [],
   imports: [
     BrowserModule,
@@ -26,6 +31,9 @@ import { AuthService } from './auth/auth.service';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule
+  ],
+  exports: [
+    ProfileComponent
   ],
   providers: [
     StatusBar,

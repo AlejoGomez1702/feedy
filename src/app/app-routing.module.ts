@@ -23,7 +23,16 @@ const routes: Routes = [
     path: 'about-us',
     loadChildren: () => import('./about-us/about-us.module').then( m => m.AboutUsPageModule),
     canLoad:[AuthGuard]
+  },  {
+    path: 'profile',
+    loadChildren: () => import('./profile/profile/profile.module').then( m => m.ProfilePageModule)
   },
+  {
+    path: 'update-profile',
+    loadChildren: () => import('./profile/update-profile/update-profile.module').then( m => m.UpdateProfilePageModule)
+  }
+
+
 ];
 
 @NgModule({

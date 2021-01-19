@@ -1,41 +1,94 @@
 <ion-app>
   <ion-menu side="end" swipeGesture="true">
-    <ion-header class="bar-header">
+    <ion-header class="bar-header ion-no-border">
       <ion-toolbar lines="none">
         <ion-menu-toggle>
-          <ion-icon name="arrow-forward-outline" size="large" class="icon-back"></ion-icon>
+            <ion-icon name="arrow-forward-outline" size="large" class="icon-back"></ion-icon>
         </ion-menu-toggle>
       </ion-toolbar>
     </ion-header>
   <ion-content>
     <ion-list>
+      <ion-menu-toggle class="ion-no-border">
+        <div class="div-no-border" routerLink="/places/tabs/discover">
+          <ion-label class="ion-align-items-center user-name">Darrell Stewart</ion-label>
+          <ion-avatar class="container_logo">
+            <img src="assets/images/user.svg" class="container_logo_user">
+          </ion-avatar>
+        </div>
+        <ion-card class="ion-no-border no-shadow">
+          <img src="assets/images/menu-info.png" alt="">
+          <h3>
+            5
+          </h3>
+          <p>
+            Food items shared so far
+          </p>
+        </ion-card>
+      </ion-menu-toggle>
       <ion-menu-toggle>
         <ion-item routerLink="/places/tabs/discover">
-          <ion-icon name="person-circle-outline" slot="start"></ion-icon>
-          <ion-label>Profile</ion-label>
+          <ion-icon class="ion-icon-custom" src="assets/icon/home.svg" >
+          </ion-icon>
+          <ion-label class="ion-custom">Home</ion-label>
         </ion-item>
       </ion-menu-toggle>
       <ion-menu-toggle>
         <ion-item routerLink="/places/tabs/discover">
-          <ion-icon name="business" slot="start"></ion-icon>
+          <ion-icon class="ion-icon-custom" src="assets/icon/requests.svg">
+          </ion-icon>
+          <ion-label class="ion-custom">Requests</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle>
+        <ion-item routerLink="/profile">
+          <ion-icon class="ion-icon-custom" src="assets/icon/profile.svg" >
+          </ion-icon>
+          <ion-label class="ion-custom">Profile</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle>
+        <ion-item routerLink="/places/tabs/discover">
+          <ion-icon class="ion-icon-custom" src="assets/icon/location.svg" >
+          </ion-icon>
+          <ion-label class="ion-custom">Location</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle>
+        <ion-item routerLink="/places/tabs/discover">
+          <ion-icon class="ion-icon-custom" src="assets/icon/shared-items.svg" >
+          </ion-icon>
+          <ion-label class="ion-custom">Your shared items</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle>
+        <ion-item routerLink="/places/tabs/discover">
+          <ion-icon class="ion-icon-custom" src="assets/icon/favorites.svg" >
+          </ion-icon>
+          <ion-label class="ion-custom">Favorites</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      <!-- <ion-menu-toggle>
+        <ion-item routerLink="/places/tabs/discover">
+          <ion-icon name="business" ></ion-icon>
           <ion-label>Discover</ion-label>
         </ion-item>
       </ion-menu-toggle>
       <ion-menu-toggle><ion-item routerLink="/discover">
-        <ion-icon name="locate" slot="start"></ion-icon>
+        <ion-icon name="locate" ></ion-icon>
         <ion-label>Near By</ion-label>
       </ion-item></ion-menu-toggle>
       <ion-menu-toggle><ion-item (click)="onShare()">
-        <ion-icon name="share-social-outline" slot="start"></ion-icon>
+        <ion-icon name="share-social-outline" ></ion-icon>
         <ion-label>Share</ion-label>
       </ion-item></ion-menu-toggle>
       <ion-menu-toggle><ion-item routerLink="/about-us">
-        <ion-icon name="information-circle-outline" slot="start"></ion-icon>
+        <ion-icon name="information-circle-outline" ></ion-icon>
         <ion-label>About us!</ion-label>
-      </ion-item></ion-menu-toggle>
+      </ion-item></ion-menu-toggle> -->
       <ion-menu-toggle> <ion-item (click)="onLogOut()" button>
-        <ion-icon name="exit" slot="start"></ion-icon>
-        <ion-label>Logout</ion-label>
+        <ion-icon class="ion-icon-custom" src="assets/icon/log-out.svg" ></ion-icon>
+        <ion-label class="ion-custom">Logout</ion-label>
     </ion-item></ion-menu-toggle>
     </ion-list>
   </ion-content>

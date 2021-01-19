@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 .icon-back
 {
     margin-left: 5%;
@@ -9,4 +10,81 @@
     border-bottom-color: transparent !important;
     background-image: none !important;
     border-bottom: none !important;
+    margin-bottom: -30px;
+}
+ion-toolbar {
+    --background: transparent;
+    --ion-color-base: transparent !important;
+ }
+
+.container_logo{
+    width:  60px;
+    height: 60px;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    &_user{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.user-name{
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 17px;
+    text-align: center;
+    margin-top: 25px;
+    margin-left: 70px;
+    letter-spacing: 1px;
+}
+
+.div-no-border{
+    display: flex;
+}
+
+.no-shadow{
+    box-shadow:none !important;
+    background-color: rgba(249, 237, 50, 0.08) !important;
+    text-align: center;
+    display: block !important;
+    font-family: 'Poppins';
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.no-shadow h3{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    color: #000000;
+}
+
+.no-shadow p{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+}
+
+.ion-icon-custom{
+    background-color: rgba($color: #FC153B, $alpha: 0.05);
+    padding: 7px;
+    border-radius: 50%;
+    width: 23px;
+    height: 22px;
+}
+
+.ion-custom{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    margin-left: 20px;
+}
+
+ion-item{
+    margin-top: 20px;
+    padding-bottom: 10px;
+    border-bottom-width: 90% !important;
 }
