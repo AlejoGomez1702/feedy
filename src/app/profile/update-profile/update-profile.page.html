@@ -19,16 +19,73 @@
 </ion-header>
 
 <ion-content>
-  <ion-row>
-    <ion-col size="4">
-      <ion-avatar class="container_logo">
-        <img src="assets/images/user.svg" class="container_logo_user">
-      </ion-avatar>
-    </ion-col>
-    <ion-col size="8" style="padding-top: 55px;">
-      <button class="special_button">
-        Upload
-      </button>
-    </ion-col>
-  </ion-row>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+        <form [formGroup]="user">
+          <ion-row style="margin-bottom: 20px;">
+            <ion-col size="4">
+              <ion-avatar class="container_logo">
+                <img src="assets/images/user.svg" class="container_logo_user">
+              </ion-avatar>
+            </ion-col>
+            <ion-col size="8" style="padding-top: 55px;">
+              <button class="special_button" [disabled]="user.invalid" type="submit">
+                Upload
+              </button>
+            </ion-col>
+          </ion-row>
+          <ion-label class="custom_label">Full Name</ion-label>
+          <ion-item class="custom_input">
+            <ion-input formControlName="name" type="text" class="custom-class"></ion-input>
+          </ion-item>
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.name">
+              <div class="error-message" *ngIf="user.get('name').hasError(validation.type) && (user.get('name').dirty || user.get('name').touched)">
+                <ion-icon slot="start" name="information-circle-outline"></ion-icon>
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+          <ion-item class="custom_input">
+            <ion-input formControlName="lastname" type="text" class="custom-class"></ion-input>
+          </ion-item>
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.lastname">
+              <div class="error-message" *ngIf="user.get('lastname').hasError(validation.type) && (user.get('lastname').dirty || user.get('lastname').touched)">
+                <ion-icon slot="start" name="information-circle-outline"></ion-icon>
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+
+          <ion-label class="custom_label">Email</ion-label>
+          <ion-item class="custom_input">
+            <ion-input formControlName="email" type="text" class="custom-class"></ion-input>
+          </ion-item>
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.email">
+              <div class="error-message" *ngIf="user.get('email').hasError(validation.type) && (user.get('email').dirty || user.get('email').touched)">
+                <ion-icon slot="start" name="information-circle-outline"></ion-icon>
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+
+          <ion-label class="custom_label">Contact Number</ion-label>
+          <ion-item class="custom_input">
+            <ion-input formControlName="cellphone" type="text" class="custom-class"></ion-input>
+          </ion-item>
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.cellphone">
+              <div class="error-message" *ngIf="user.get('cellphone').hasError(validation.type) && (user.get('cellphone').dirty || user.get('cellphone').touched)">
+                <ion-icon slot="start" name="information-circle-outline"></ion-icon>
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

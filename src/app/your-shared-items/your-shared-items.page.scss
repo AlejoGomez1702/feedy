@@ -1,0 +1,73 @@
+.header_container{
+    display: flex;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.back_custom{
+    width: 14px;
+    height: 14px;
+    margin-top: 30px;
+}
+
+ion-title{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: #090909;
+    margin-top: -5px;
+}
+
+.quantity h2{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 22px;
+    margin-top: 30px;
+    margin-left: 15px;
+}
+
+img{
+    width: 85px;
+    height: 85px;
+    border-radius: 7px;
+    margin-bottom: 10px;
+}
+
+.custom-margin{
+    margin-top: 35px;
+}
+
+.custom-title{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.custom-description{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.custom-date{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    color: #999999;
+    margin-top: -10px;
+}
+
+.up-custom{
+    margin-top: -15px;
+}

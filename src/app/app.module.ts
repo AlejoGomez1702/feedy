@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -30,7 +31,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     IonicModule.forRoot(),
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    FormsModule, ReactiveFormsModule
   ],
   exports: [
     ProfileComponent

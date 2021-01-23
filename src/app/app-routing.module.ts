@@ -30,6 +30,14 @@ const routes: Routes = [
   {
     path: 'update-profile',
     loadChildren: () => import('./profile/update-profile/update-profile.module').then( m => m.UpdateProfilePageModule)
+  },
+  {
+    path: 'location',
+    loadChildren: () => import('./location/location.module').then( m => m.LocationPageModule)
+  },
+  {
+    path: 'your-shared-items',
+    loadChildren: () => import('./your-shared-items/your-shared-items.module').then( m => m.YourSharedItemsPageModule)
   }
 
 

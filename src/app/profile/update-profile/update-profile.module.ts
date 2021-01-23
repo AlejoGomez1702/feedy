@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { UpdateProfilePageRoutingModule } from './update-profile-routing.module';
 
 import { UpdateProfilePage } from './update-profile.page';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    UpdateProfilePageRoutingModule
+    UpdateProfilePageRoutingModule,
+    FormsModule, ReactiveFormsModule
   ],
   declarations: [UpdateProfilePage]
 })
